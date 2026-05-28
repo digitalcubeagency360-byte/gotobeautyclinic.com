@@ -10,3 +10,7 @@ jobs:
           node-version: '18'
       - run: npm ci
       - run: npm run build
+
+- name: Validate package.json
+  run: node -e "const fs=require('fs'); JSON.parse(fs.readFileSync('package.json','utf8')); console.log('package.json OK')"
+
